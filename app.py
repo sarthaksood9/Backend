@@ -59,7 +59,7 @@ def create_faq():
     return jsonify(faq), 201
 
 # Update an existing FAQ by ID
-@app.route('/faqs/<string:faq_id>', methods=['PUT'])
+@app.route('/faqs/<string:faq_id>', methods=['POST'])
 def update_faq(faq_id):
     try:
         faq = faq_collection.find_one({'_id': ObjectId(faq_id)})
